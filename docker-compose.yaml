@@ -1,0 +1,109 @@
+---
+version: '3.6'
+
+x-blockscout-ref:
+  &blockscout-def
+  image: consensys/blockscout:v4.1.5-beta
+  container_name: blockscout
+  restart: "no"
+  environment:
+    - PORT=4000
+    - ECTO_USE_SSL=false
+    - DATABASE_URL=postgresql://postgres:postgres@blockscoutpostgres:5432/postgres?ssl=false
+    - POSTGRES_PASSWORD=postgres
+    - POSTGRES_USER=postgres
+    - NETWORK=bharatblockchain
+    - NETWORK=Dev Quickstart
+    - SUBNETWORK=BBN
+    - CHAIN_ID=2018
+    - COIN=BBN
+    - ETHEREUM_JSONRPC_VARIANT=besu
+    - ETHEREUM_JSONRPC_TRANSPORT=http
+    - ETHEREUM_JSONRPC_HTTP_URL=http://idspeer1.test.bharatblockchain.io:15021
+    - ETHEREUM_JSONRPC_TRACE_URL=http://idspeer1.test.bharatblockchain.io:15021
+    - ETHEREUM_JSONRPC_WS_URL=ws://idspeer1.test.bharatblockchain.io:15021
+  entrypoint:
+    - /bin/sh
+    - -c
+    - |
+      cd /opt/app/;
+      echo $$MIX_ENV && mix do ecto.create, ecto.migrate; mix phx.server;
+  depends_on:
+    - blockscoutpostgres
+  links:
+    - blockscoutpostgres
+  ports:
+    - 8080:4000
+
+x-blockscoutpostgres-ref:
+  &blockscoutpostgres-def
+  image: postgres:13.6-alpine
+  restart: "on-failure"
+  container_name: blockscoutpostgres
+  environment:
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=postgres
+    - POSTGRES_HOST_AUTH_METHOD=trust
+  volumes:
+    - blockscoutpostgres:/var/lib/postgresql/data
+  ports:
+    - 5432
+  healthcheck:
+    test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+    interval: 5s
+    timeout: 10s
+    retries: 5
+
+
+volumes:
+  prometheus:
+  grafana:
+  blockscoutpostgres:
+
+networks:
+  bharatblockchain:
+    name: bharatblockchain
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.239.0/24
+
+
+services:
+  prometheus:
+    image: "prom/prometheus"
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus:/prometheus
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+    ports:
+      - 9090:9090/tcp
+    networks:
+      bharatblockchain:
+        ipv4_address: 172.16.239.32
+
+  grafana:
+    image: "grafana/grafana"
+    environment:
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_USERS_VIEWERS_CAN_EDIT=true
+    volumes:
+      - ./config/provisioning/:/etc/grafana/provisioning/
+      - grafana:/var/lib/grafana
+    ports:
+      - 3000:3000/tcp
+    networks:
+      bharatblockchain:
+        ipv4_address: 172.16.239.33
+  blockscout:
+    << : *blockscout-def
+    networks:
+      bharatblockchain:
+        ipv4_address: 172.16.239.51
+
+  blockscoutpostgres:
+    << : *blockscoutpostgres-def
+    networks:
+      bharatblockchain:
+        ipv4_address: 172.16.239.52
