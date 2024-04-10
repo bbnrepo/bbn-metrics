@@ -48,8 +48,8 @@
       }
     ]
   },
-  "description": "Provides an overview of Besu nodes",
-  "editable": true,
+  "description": "Provides an overview of BBN TestNet Nodes",
+  "editable": false,
   "gnetId": 10273,
   "graphTooltip": 0,
   "id": null,
@@ -414,7 +414,7 @@
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{instance}}",
+          "legendFormat": "{{instance}} - {{job}}",
           "refId": "A"
         },
         {
@@ -508,7 +508,7 @@
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{instance}}",
+          "legendFormat": "{{instance}} - {{job}}",
           "refId": "A"
         }
       ],
@@ -593,7 +593,7 @@
           "expr": "irate(process_cpu_seconds_total{instance=~\"$system\"}[1m])",
           "format": "time_series",
           "intervalFactor": 1,
-          "legendFormat": "CPU Time IRate [{{instance}}]",
+          "legendFormat": "CPU Time IRate [{{instance}} - {{job}}]",
           "refId": "A"
         }
       ],
@@ -680,7 +680,7 @@
           "format": "time_series",
           "interval": "",
           "intervalFactor": 5,
-          "legendFormat": "{{gc}} [{{instance}}]",
+          "legendFormat": "{{gc}} [{{instance}} - {{job}}]",
           "metric": "jvm_gc_collection_seconds_sum",
           "refId": "A",
           "step": 10
@@ -769,7 +769,7 @@
           "expr": "jvm_memory_bytes_used{instance=~\"$system\", area=\"heap\"} + ignoring(area) jvm_memory_bytes_used{instance=~\"$system\", area=\"nonheap\"}",
           "format": "time_series",
           "intervalFactor": 5,
-          "legendFormat": "{{instance}}",
+          "legendFormat": "{{instance}} - {{job}}",
           "refId": "A"
         }
       ],
@@ -878,7 +878,7 @@
     ]
   },
   "timezone": "",
-  "title": "Besu Overview",
+  "title": "BBN Testnet Overview",
   "uid": "XE4V0WGZz",
   "version": 1
 }

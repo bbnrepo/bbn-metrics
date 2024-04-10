@@ -19,44 +19,295 @@ rule_files:
 # A scrape configuration containing exactly one endpoint to scrape:
 # Here it's Prometheus itself.
 scrape_configs:
-    - job_name: validator1
+    - job_name: IDS validator1
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
       scheme: http
       static_configs:
-        - targets: [ "13.126.107.50:9545" ]
+        - targets: [ "validator1.hyderabad.bharatblockchain.io:15041" ]
 
-    - job_name: validator2
+    - job_name: IDS validator2
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
       scheme: http
       static_configs:
-        - targets: [ "13.126.107.50:9545" ]
+        - targets: [ "validator2.hyderabad.bharatblockchain.io:15042" ]
 
-    - job_name: validator3
+    - job_name: IDS validator3
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
       scheme: http
       static_configs:
-        - targets: [ "13.126.107.50:9545" ]
+        - targets: [ "validator3.hyderabad.bharatblockchain.io:15043" ]
 
-    - job_name: validator4
+    - job_name: IDS validator4
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
       scheme: http
       static_configs:
-        - targets: [ "13.126.107.50:9545" ]
+        - targets: [ "validator4.hyderabad.bharatblockchain.io:15044" ]
 
-    - job_name: rpcnode
+    - job_name: IDS validator5
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
       scheme: http
       static_configs:
-        - targets:
-          - 13.126.107.50:9545
+        - targets: [ "validator5.hyderabad.bharatblockchain.io:15045" ]
+
+    - job_name: IDS validator6
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "validator6.hyderabad.bharatblockchain.io:15046" ]
+
+    - job_name: IDS Node 1
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "idspeer1.hyderabad.bharatblockchain.io:15047" ]
+
+    - job_name: IDS Node 2
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "idspeer2.hyderabad.bharatblockchain.io:15048" ]
+    
+    - job_name: Loyola ICAM College of Engg and Tech
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "14.194.86.237:9545" ]
+    
+    - job_name: DKTE Maharashtra
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "210.212.172.213:9545" ]
+  
+    - job_name: Karpagam Institute of Technology
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "121.200.52.130:9545" ]
+    
+    - job_name: Gopalan Bengaluru
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "27.34.244.114:9545" ]
+    
+    - job_name: National Engg College Tamilnadu
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "103.84.178.56:9545" ]
+    
+    - job_name: IMI Kolkata
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "61.12.42.60:9545" ]
+    
+    - job_name: Jawaharlal College, Kerela
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "136.232.56.38:9545" ]
+
+     - job_name: Knowledge Institute Of Technology
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "115.244.249.214:9545" ]
+
+     - job_name: Kumaraguru College of Technology
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "10.1.54.150:9545" ]
+  
+     - job_name: PSG Polytechnic College
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "14.139.180.67:9545" ]
+
+     - job_name: Rathinam College of Arts and Science
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "192.158.3.241:9545" ]
+
+     - job_name: SRM University
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "10.1.56.50:9545" ]
+
+     - job_name: Dadi Institute of Engg and Technology
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "10.0.10.136:9545" ]
+
+     - job_name: Vasireddy Venkatadri Institute of Technology
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "43.227.132.244:9545" ]
+
+     - job_name: Acropolis Institute of Technology and Research
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "115.245.99.238:9545" ]
+
+   - job_name: GIET - Gandhi Institute Of Engg And Technology 
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "172.24.17.60:9545" ]
+
+  - job_name: IMI Bhubaneswar 
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "119.226.18.66:9545" ]
+
+  - job_name: Sri padmavati mahila University 
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "14.139.85.118:9545" ]
+
+    - job_name: Roorkee Institute of Technology
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "103.79.114.49:9545" ]
+
+   - job_name: Dhanekula Institute of Engg and technology
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "117.239.148.84:9545" ]
+
+   - job_name: ISBR Business School
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "202.83.19.221:9545" ]
+
+   - job_name: Sikkim Manipal University
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "115.243.196.107:9545" ]
+
+   - job_name: Vaagdevi college 
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "103.65.202.218:9545" ]
+    
+    - job_name: Priyanka Node
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "61.2.149.115:9545" ]
+        
+        
+    # - job_name: IDS Node 2
+    #   scrape_interval: 15s
+    #   scrape_timeout: 10s
+    #   metrics_path: /metrics
+    #   scheme: http
+    #   static_configs:
+    #     - targets: [ "13.126.40.52:9545" ]
+
+    # - job_name: node1
+    #   scrape_interval: 15s
+    #   scrape_timeout: 10s
+    #   metrics_path: /metrics
+    #   scheme: http
+    #   static_configs:
+    #     - targets: [ "10.1.54.150:9545" ]
+
+# all the nodes override themselves if given the same name
+    # so we use dns based lookup and, replace labels to
+    # alter the address from 192.168.x.y:9545 to node:192.168.x.y:9545 so they are easier to see in grafana
+    # - job_name: node
+    #   scrape_interval: 15s
+    #   scrape_timeout: 10s
+    #   metrics_path: /metrics
+    #   scheme: http
+    #   dns_sd_configs:
+    #     - names:
+    #         - node
+    #       type: 'A'
+    #       port: 9545
+    #   relabel_configs:
+    #     - source_labels: [__address__]
+    #       regex: '(.*)'
+    #       target_label: instance
+    #       replacement: "node:$1"
 

@@ -1,0 +1,153 @@
+# my global config
+global:
+  scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+  # scrape_timeout is set to the global default (10s).
+
+# Alertmanager configuration
+alerting:
+#  alertmanagers:
+#  - static_configs:
+#    - targets:
+# - alertmanager:9093
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+# - "first_rules.yml"
+# - "second_rules.yml"
+
+# A scrape configuration containing exactly one endpoint to scrape:
+# Here it's Prometheus itself.
+
+scrape_configs:
+    - job_name: IDS validator1
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "validator1.arabiannetwork.idssoft.com:15041" ]
+
+    - job_name: IDS validator2
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "validator2.arabiannetwork.idssoft.com:15042" ]
+
+    - job_name: IDS validator3
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "validator3.arabiannetwork.idssoft.com:15043" ]
+
+    - job_name: IDS validator4
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "validator4.arabiannetwork.idssoft.com:15044" ]
+
+    - job_name: IDS validator5
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "validator5.arabiannetwork.idssoft.com:15045" ]
+
+    - job_name: IDS validator6
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "validator6.arabiannetwork.idssoft.com:15046" ]
+
+    - job_name: IDS Node 1
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "idspeer1.arabiannetwork.idssoft.com:15047" ]
+
+    - job_name: IDS Node 2
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "idspeer2.arabiannetwork.idssoft.com:15048" ]
+    
+    - job_name: MAHE Dubai
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "94.200.75.201:9545" ]
+    
+    - job_name: Akshai Node (PC)
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "117.99.195.141:9545" ]
+
+    - job_name: Priyanka Node (PC)
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "49.36.34.28:9545" ]
+
+    # - job_name: Akshai Node (VM)
+    #   scrape_interval: 15s
+    #   scrape_timeout: 10s
+    #   metrics_path: /metrics
+    #   scheme: http
+    #   static_configs:
+    #     - targets: [ "10.0.2.15:9545" ]
+
+    # - job_name: IDS Node 2
+    #   scrape_interval: 15s
+    #   scrape_timeout: 10s
+    #   metrics_path: /metrics
+    #   scheme: http
+    #   static_configs:
+    #     - targets: [ "13.126.40.52:9545" ]
+
+    # - job_name: node1
+    #   scrape_interval: 15s
+    #   scrape_timeout: 10s
+    #   metrics_path: /metrics
+    #   scheme: http
+    #   static_configs:
+    #     - targets: [ "10.1.54.150:9545" ]
+
+# all the nodes override themselves if given the same name
+    # so we use dns based lookup and, replace labels to
+    # alter the address from 192.168.x.y:9545 to node:192.168.x.y:9545 so they are easier to see in grafana
+    # - job_name: node
+    #   scrape_interval: 15s
+    #   scrape_timeout: 10s
+    #   metrics_path: /metrics
+    #   scheme: http
+    #   dns_sd_configs:
+    #     - names:
+    #         - node
+    #       type: 'A'
+    #       port: 9545
+    #   relabel_configs:
+    #     - source_labels: [__address__]
+    #       regex: '(.*)'
+    #       target_label: instance
+    #       replacement: "node:$1"
+

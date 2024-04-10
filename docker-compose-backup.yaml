@@ -4,7 +4,6 @@ version: '3.6'
 volumes:
   prometheus:
   prometheus-mainnet:
-  prometheus-arabian:
 
 networks:
   bharatblockchain:
@@ -40,15 +39,3 @@ services:
     networks:
       bharatblockchain:
         ipv4_address: 172.16.239.33
-  prometheus-arabian:
-    image: "prom/prometheus"
-    volumes:
-      - ./config/prometheus-arabian.yml:/etc/prometheus/prometheus-arabian.yml
-      - prometheus-arabian:/prometheus
-    command:
-      - --config.file=/etc/prometheus/prometheus-arabian.yml
-    ports:
-      - 9092:9090/tcp
-    networks:
-      bharatblockchain:
-        ipv4_address: 172.16.239.34
