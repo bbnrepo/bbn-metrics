@@ -2,7 +2,7 @@
 version: '3.6'
 
 volumes:
-  prometheus:
+  prometheus-testnet:
   prometheus-mainnet:
   prometheus-arabian:
 
@@ -19,10 +19,10 @@ services:
   prometheus:
     image: "prom/prometheus"
     volumes:
-      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
-      - prometheus:/prometheus
+      - ./config/prometheus-testnet.yml:/etc/prometheus/prometheus-testnet.yml
+      - prometheus-testnet:/prometheus
     command:
-      - --config.file=/etc/prometheus/prometheus.yml
+      - --config.file=/etc/prometheus/prometheus-testnet.yml
     ports:
       - 9090:9090/tcp
     networks:

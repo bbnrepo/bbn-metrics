@@ -139,7 +139,7 @@ scrape_configs:
       static_configs:
         - targets: [ "136.232.56.38:9545" ]
 
-     - job_name: Knowledge Institute Of Technology
+    - job_name: Knowledge Institute Of Technology
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
@@ -147,7 +147,7 @@ scrape_configs:
       static_configs:
         - targets: [ "115.244.249.214:9545" ]
 
-     - job_name: Kumaraguru College of Technology
+    - job_name: Kumaraguru College of Technology
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
@@ -155,7 +155,7 @@ scrape_configs:
       static_configs:
         - targets: [ "10.1.54.150:9545" ]
   
-     - job_name: PSG Polytechnic College
+    - job_name: PSG Polytechnic College
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
@@ -163,7 +163,7 @@ scrape_configs:
       static_configs:
         - targets: [ "14.139.180.67:9545" ]
 
-     - job_name: Rathinam College of Arts and Science
+    - job_name: Rathinam College of Arts and Science
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
@@ -171,7 +171,7 @@ scrape_configs:
       static_configs:
         - targets: [ "192.158.3.241:9545" ]
 
-     - job_name: SRM University
+    - job_name: SRM University
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
@@ -179,7 +179,7 @@ scrape_configs:
       static_configs:
         - targets: [ "10.1.56.50:9545" ]
 
-     - job_name: Dadi Institute of Engg and Technology
+    - job_name: Dadi Institute of Engg and Technology
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
@@ -187,7 +187,7 @@ scrape_configs:
       static_configs:
         - targets: [ "10.0.10.136:9545" ]
 
-     - job_name: Vasireddy Venkatadri Institute of Technology
+    - job_name: Vasireddy Venkatadri Institute of Technology
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
@@ -195,7 +195,7 @@ scrape_configs:
       static_configs:
         - targets: [ "43.227.132.244:9545" ]
 
-     - job_name: Acropolis Institute of Technology and Research
+    - job_name: Acropolis Institute of Technology and Research
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
@@ -203,7 +203,7 @@ scrape_configs:
       static_configs:
         - targets: [ "115.245.99.238:9545" ]
 
-   - job_name: GIET - Gandhi Institute Of Engg And Technology 
+    - job_name: GIET - Gandhi Institute Of Engg And Technology 
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
@@ -211,7 +211,7 @@ scrape_configs:
       static_configs:
         - targets: [ "172.24.17.60:9545" ]
 
-  - job_name: IMI Bhubaneswar 
+    - job_name: IMI Bhubaneswar 
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
@@ -219,7 +219,7 @@ scrape_configs:
       static_configs:
         - targets: [ "119.226.18.66:9545" ]
 
-  - job_name: Sri padmavati mahila University 
+    - job_name: Sri padmavati mahila University 
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
@@ -235,7 +235,7 @@ scrape_configs:
       static_configs:
         - targets: [ "103.79.114.49:9545" ]
 
-   - job_name: Dhanekula Institute of Engg and technology
+    - job_name: Dhanekula Institute of Engg and technology
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
@@ -243,7 +243,7 @@ scrape_configs:
       static_configs:
         - targets: [ "117.239.148.84:9545" ]
 
-   - job_name: ISBR Business School
+    - job_name: ISBR Business School
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
@@ -251,7 +251,7 @@ scrape_configs:
       static_configs:
         - targets: [ "202.83.19.221:9545" ]
 
-   - job_name: Sikkim Manipal University
+    - job_name: Sikkim Manipal University
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
@@ -259,7 +259,7 @@ scrape_configs:
       static_configs:
         - targets: [ "115.243.196.107:9545" ]
 
-   - job_name: Vaagdevi college 
+    - job_name: Vaagdevi college 
       scrape_interval: 15s
       scrape_timeout: 10s
       metrics_path: /metrics
@@ -267,6 +267,14 @@ scrape_configs:
       static_configs:
         - targets: [ "103.65.202.218:9545" ]
     
+    - job_name: Indira Institute of Management Pune
+      scrape_interval: 15s
+      scrape_timeout: 10s
+      metrics_path: /metrics
+      scheme: http
+      static_configs:
+        - targets: [ "14.142.131.54:9545" ]
+
     - job_name: Priyanka Node
       scrape_interval: 15s
       scrape_timeout: 10s

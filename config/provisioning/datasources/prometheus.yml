@@ -18,7 +18,9 @@ datasources:
     # <int> org id. will default to orgId 1 if not specified
     orgId: 1
     # <string> url
-    url: http://65.0.135.93:9090/
+    # url: http://65.0.135.93:9090/ -- AWS Old
+    url: http://98.70.39.100:9090/
+    # url: https://metrics.bharatblockchain.io
     # <string> Deprecated, use secureJsonData.password
     password:
     # <string> database user, if used
